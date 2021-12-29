@@ -58,6 +58,11 @@ app.get("/api/animals", (req, res) => {
     results = filterByQuery(req.query, results);
   }
   res.json(results);
+  app.post("/api/animals", (req, res) => {
+    // req.body is where our incoming content will be
+    console.log(req.body);
+    res.json(req.body);
+  });
 });
 
 app.get("/api/animals/:id", (req, res) => {
@@ -66,6 +71,11 @@ app.get("/api/animals/:id", (req, res) => {
     res.json(result);
   } else {
     res.send(404);
+    app.post("/api/animals", (req, res) => {
+      // req.body is where our incoming content will be
+      console.log(req.body);
+      res.json(req.body);
+    });
   }
 });
 
